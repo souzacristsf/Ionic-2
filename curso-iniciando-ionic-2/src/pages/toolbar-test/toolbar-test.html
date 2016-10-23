@@ -1,0 +1,55 @@
+  <ion-navbar>
+    <ion-title>Toolbar</ion-title>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+<ion-toolbar color="danger">
+  <ion-title>Sub-header</ion-title>
+
+  <ion-buttons end>
+    <button>
+      <ion-icon name="contact"></ion-icon>
+    </button>
+    <button>
+      <ion-icon name="home"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-toolbar color="secodanry">
+  <ion-searchbar [(ngModel)]="search"></ion-searchbar>
+</ion-toolbar>
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="segment">
+    <ion-segment-button value="novos">
+      Novos Noticias
+    </ion-segment-button>
+    <ion-segment-button value="noticias">
+      Noticias
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+
+<ion-content padding>
+  <div [ngSwitch]="segment">
+    <ion-list *ngSwitchWhen=""+novos+"">
+      <ion-item>Novo 1</ion-item>
+      <ion-item>Novo 2</ion-item>
+      <ion-item>Novo 3</ion-item>
+    </ion-list>
+    <ion-list *ngSwitchWhen=""+noticias+"">
+      <ion-item>Noticias 1</ion-item>
+      <ion-item>Noticias 2</ion-item>
+      <ion-item>Noticias 3</ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+
+<ion-toolbar color="danger" bottom>
+  <ion-title>Footer</ion-title>
+</ion-toolbar>
